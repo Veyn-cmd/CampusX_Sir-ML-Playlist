@@ -1,6 +1,17 @@
 import streamlit as st
 from sklearn.datasets import load_iris
 import pandas as pd
+import numpy as np  
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
+st.set_page_config(
+    page_title="Iris Dataset Explorer",
+    page_icon="⚫",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 # Load dataset
 iris = load_iris()
@@ -47,13 +58,22 @@ sns.scatterplot(
     palette="viridis",
     ax=ax
 )
-
 ax.set_title(f"{x_feature} vs {y_feature}")
 st.pyplot(fig)
-
-if st.checkbox("Show Pairplot"):
-    st.write("🔍 Pairplot of all features")
-    fig_pair = sns.pairplot(df, hue="species", corner=True, palette="cool")
-    st.pyplot(fig_pair)
+fig_pair = sns.pairplot(df, hue="species", corner=True, palette="cool")
+st.pyplot(fig_pair)
 
 
+
+import plotly.express as px
+feature = "petal length"
+
+fig = px.line(
+    df,
+    y=feature,
+    x=df.index,
+    color='target_name',
+    markers=True,
+    title=f"{feature.capitalize()} over samples"
+)
+st.plotly_chart(fig, use_container_width=True)
