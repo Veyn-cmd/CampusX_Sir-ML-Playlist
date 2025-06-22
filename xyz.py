@@ -9,8 +9,8 @@ from sklearn.datasets import load_iris
 
 # 🔧 Configure the Streamlit app
 st.set_page_config(
-    page_title="🌸 Iris Dataset Explorer",
-    page_icon="🌸",
+    page_title="🌼 Iris Dataset Explorer",
+    page_icon="🌼",
     layout="wide",
     initial_sidebar_state="expanded"
 )
