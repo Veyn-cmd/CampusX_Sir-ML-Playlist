@@ -23,7 +23,7 @@ df['species'] = df['target'].apply(lambda x: iris.target_names[x])
 df['target_name'] = df['species']  # For Plotly coloring
 
 # 📌 App Title
-st.title("🌸 Iris Dataset Explorer")
+st.title("🌼 Iris Dataset Explorer")
 st.write("Explore one of the most famous datasets in machine learning with visualizations and interactivity.")
 
 # 📄 Show Raw Data
