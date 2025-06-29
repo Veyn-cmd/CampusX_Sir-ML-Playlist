@@ -15,7 +15,7 @@ st.set_page_config(page_title="Aircraft Crash Analytics", layout="wide")
 # Load data
 @st.cache_data
 def load_data():
-    df = pd.read_csv("pd.read_csv(r"C:\Users\kanishka\Downloads\planecrashinfo_20181121001952.csv")
+    df = pd.read_csv(r"C:\Users\kanishka\Downloads\planecrashinfo_20181121001952.csv")
 ")
     df = df.replace('?', np.nan)
     df['date'] = pd.to_datetime(df['date'], errors='coerce')
